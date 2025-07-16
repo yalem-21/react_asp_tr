@@ -9,7 +9,23 @@
     background-color: green;
 }
 .bodyLeftNav {
-    width: 25%; 
+    width: 25%;
     height: 100vh;
-    background-color: #55607d;
+    background-color: black;
+  
+}
+.navMenuLeftLink {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    
+}
+.linkLeft{
+    margin-top:-30px;
+}
+.navMenuLeftLink:hover {
+    background-color: gray;
+    color: white;
+    font-weight: bold;
+    padding: 20px;
 }

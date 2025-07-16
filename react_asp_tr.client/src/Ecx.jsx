@@ -14,7 +14,6 @@ import Managment from './Managment';
 import Dashboard from './Dashboard';
 
 function Ecx() { 
-
     const [isNavMenuClicked, setIsNavMenuClicked] = useState(true);
         const handleMenu = (event) => {
             //console.log("items are clickedgghghghghghghgh here");
@@ -27,7 +26,6 @@ function Ecx() {
         <Navbar expand="sm" style={{ backgroundColor: '#302f2b', margin: '0', padding: '0', position:'relative' } }>
             <Container fluid>
 
-
                     {isNavMenuClicked ? (<Navbar.Brand expand="lg" href="#" style={{
                         color: 'white', fontWeight: 'bold',
                         backgroundColor: 'blue', margin: '-20px',
@@ -37,7 +35,6 @@ function Ecx() {
                     }}> <img className="rounded" src={Image} width='30px' height='20px' />
                         <span style={{ marginLeft: '7px' }}>ECX</span>
                     </Navbar.Brand>) :null  }
-
 
                     <Button onClick={handleMenu} className="navMenu" style={{ color: 'white', fontWeight: 'bold', paddingBottom: '10px', backgroundColor: '#302f2b', border: 'none' }}><Icon style={{ fontWeight: 'bold', fontSize: '20px' }} name="list" size={52} /></Button>
 
@@ -68,14 +65,19 @@ function Ecx() {
        
             {/* body are start from here it divided into left part and main body */}
             <div className="d-flex">
-                {isNavMenuClicked ? 
-                    (<div className="bodyLeftNav" style={{ marginLeft: '-10px' }}>
+                {isNavMenuClicked ?
+                    (<div className="bodyLeftNav" style={{ marginLeft: '-10px', display: 'flex', flexDirection: 'column', color: 'white', paddingLeft: '0px', justifyContent: 'center' }}>
 
-                        <Link to='/'>Dashboard</Link><br />
-                        <Link to='/report'>Report</Link><br />
-                        <Link to='/management'>management</Link>
-                       
-                    </div>) : (<div style={{ width: '100%', height: '100vh', backgroundColor: '#e9ecf5', marginRight: '0' }}>
+                        <Link className="navMenuLeftLink" style={{ display: 'block', color: 'white', textDecoration: 'none' }} to='/'>Dashboard</Link><br />
+                        <Link className="navMenuLeftLink" style={{ display: 'block', color: 'white', textDecoration:'none'}} to='/report'>Budget management</Link><br />
+                        <Link className="navMenuLeftLink" style={{ display: 'block', color: 'white', textDecoration: 'none' }} to='/management'>expense management</Link>
+                        <p style={{ backgroundColor:'gray' }} className="navMenuLeftLink">Report</p>
+                        <Link className="navMenuLeftLink" style={{ display: 'block', color: 'white', textDecoration: 'none' }} to='/report'>Budget report</Link><br />
+                        <Link className="navMenuLeftLink" style={{ display: 'block', color: 'white', textDecoration: 'none' }} to='/management'>expense report</Link>
+                        <Link className="navMenuLeftLink" style={{ display: 'block', color: 'white', textDecoration: 'none' }} to='/report'>Budget List</Link><br />
+                        <Link className="navMenuLeftLink" style={{ display: 'block', color: 'white', textDecoration: 'none' }} to='/management'> <i className="bi bi-gear-fill"></i> Setting</Link>
+
+                    </div>) : (<div style={{ width: '100%', height: '100vh', backgroundColor: '#e9ecf5', marginRight: '0', border:'6px solid black' }}>
                         <Routes>
                             <Route path="/" element={<Dashboard />} ></Route>
                             <Route path="/report" element={<Report />} ></Route>
@@ -93,8 +95,6 @@ function Ecx() {
                 }
             </div>
 
-
-         
       </>
     );
 }
