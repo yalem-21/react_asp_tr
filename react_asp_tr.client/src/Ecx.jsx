@@ -23,7 +23,7 @@ function Ecx() {
     return (
         <>
             {/*  top nav bar are done from here   */ } 
-        <Navbar expand="sm" style={{ backgroundColor: '#302f2b', margin: '0', padding: '0', position:'relative' } }>
+        <Navbar expand="sm" style={{ backgroundColor: '#302f2b', margin: '0', padding: '0', position:'fixed', top:'0', left:'0', right:'0' } }>
             <Container fluid>
 
                     {isNavMenuClicked ? (<Navbar.Brand expand="lg" href="#" style={{
@@ -66,17 +66,17 @@ function Ecx() {
             {/* body are start from here it divided into left part and main body */}
             <div className="d-flex">
                 {isNavMenuClicked ?
-                    (<div className="bodyLeftNav" style={{ marginLeft: '-10px', display: 'flex', flexDirection: 'column', color: 'white', paddingLeft: '0px', justifyContent: 'center' }}>
+                    (<div className="bodyLeftNav" style={{ marginLeft: '-10px', display: 'flex', flexDirection: 'column', color: 'white', paddingLeft: '0px', justifyContent: 'center', marginTop: '-25px' }}>
 
-                        <Link className="navMenuLeftLink" style={{ display: 'block', color: 'white', textDecoration: 'none' }} to='/'>Dashboard</Link><br />
-                        <Link className="navMenuLeftLink" style={{ display: 'block', color: 'white', textDecoration:'none'}} to='/report'>Budget management</Link><br />
-                        <Link className="navMenuLeftLink" style={{ display: 'block', color: 'white', textDecoration: 'none' }} to='/management'>expense management</Link>
-                        <p style={{ backgroundColor:'gray' }} className="navMenuLeftLink">Report</p>
-                        <Link className="navMenuLeftLink" style={{ display: 'block', color: 'white', textDecoration: 'none' }} to='/report'>Budget report</Link><br />
-                        <Link className="navMenuLeftLink" style={{ display: 'block', color: 'white', textDecoration: 'none' }} to='/management'>expense report</Link>
-                        <Link className="navMenuLeftLink" style={{ display: 'block', color: 'white', textDecoration: 'none' }} to='/report'>Budget List</Link><br />
-                        <Link className="navMenuLeftLink" style={{ display: 'block', color: 'white', textDecoration: 'none' }} to='/management'> <i className="bi bi-gear-fill"></i> Setting</Link>
-
+                        <Link className="navMenuLeftLink" style={{ display: 'block', color: 'black', textDecoration: 'none',marginTop:'-25px' }} to='/'>Dashboard</Link><br />
+                        <Link className="navMenuLeftLink" style={{ display: 'block', color: 'black', textDecoration: 'none', marginTop: '-15px' }} to='/report'>Budget management</Link><br />
+                        <Link className="navMenuLeftLink" style={{ display: 'block', color: 'black', textDecoration: 'none', marginTop: '-15px' }} to='/management'>expense management</Link>
+                        <p style={{ backgroundColor: '#91b3ba' }} className="navMenuLeftLink">Report</p>
+                        <Link className="navMenuLeftLink" style={{ display: 'block', color: 'black', textDecoration: 'none', marginTop: '-15px' }} to='/report'>Budget report</Link><br />
+                        <Link className="navMenuLeftLink" style={{ display: 'block', color: 'black', textDecoration: 'none', marginTop: '-15px' }} to='/management'>expense report</Link>
+                        <Link className="navMenuLeftLink" style={{ display: 'block', color: 'black', textDecoration: 'none', marginTop: '-10px' }} to='/report'>Budget List</Link><br />
+                        <Link className="navMenuLeftLink" style={{ display: 'block', color: 'black', textDecoration: 'none', marginTop: '-15px' }} to='/management'> <i className="bi bi-gear-fill"></i> Setting</Link>
+                        <div></div>
                     </div>) : (<div style={{ width: '100%', height: '100vh', backgroundColor: '#e9ecf5', marginRight: '0', border:'6px solid black' }}>
                         <Routes>
                             <Route path="/" element={<Dashboard />} ></Route>
