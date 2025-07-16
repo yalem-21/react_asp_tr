@@ -11,7 +11,7 @@ function Dashboard() {
                     Wellcome To admin Dashboard
                 </h3
                 ></div>
-                <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
+                <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', flexWrap: 'wrap' }}>
                     <Card style={{margin:'20px', padding:'30px'} }>
                         <Card.Title>Total Overall budget</Card.Title>
                       
@@ -33,7 +33,7 @@ function Dashboard() {
 
                 </div>
 
-                <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
+                <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', flexWrap: 'wrap' }}>
                     <Card style={{ margin: '20px', padding: '30px' }}>
                         <Card.Title>Electricity</Card.Title>
 
