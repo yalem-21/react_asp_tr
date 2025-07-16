@@ -6,7 +6,12 @@ import Navbar from 'react-bootstrap/Navbar';
 import './Style/Ecx.css';
 import Icon from '@reacticons/bootstrap-icons';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import  { useState } from 'react';
+import { useState } from 'react';
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Report from './Report'
+import Managment from './Managment';
+import Dashboard from './Dashboard';
 
 function Ecx() { 
 
@@ -34,7 +39,7 @@ function Ecx() {
                     </Navbar.Brand>) :null  }
 
 
-                    <Button onClick={handleMenu} className="navMenu" style={{ color: 'white', fontWeight: 'bold', paddingBottom: '10px', backgroundColor: '#302f2b', border: 'none' }} href="#action1"><Icon style={{ fontWeight: 'bold', fontSize: '20px' }} name="list" size={52} /></Button>
+                    <Button onClick={handleMenu} className="navMenu" style={{ color: 'white', fontWeight: 'bold', paddingBottom: '10px', backgroundColor: '#302f2b', border: 'none' }}><Icon style={{ fontWeight: 'bold', fontSize: '20px' }} name="list" size={52} /></Button>
 
                 <Navbar.Toggle style={{ color: 'white', borderColor: 'white', backgroundColor:'white' }} aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
@@ -60,27 +65,36 @@ function Ecx() {
                 </Navbar.Collapse>
             </Container>
         </Navbar>
-
+       
             {/* body are start from here it divided into left part and main body */}
             <div className="d-flex">
                 {isNavMenuClicked ? 
                     (<div className="bodyLeftNav" style={{ marginLeft: '-10px' }}>
-                        <ul style={{ display: 'flex', flexDirection: 'column' }}>
-                            <li> <a href="#" >act1</a></li>
-                            <li></li>
 
-                        </ul>
-                    </div>) : (<div style={{ width: '100%', height: '100vh', backgroundColor: 'green', marginRight: '0' }}>
-                        Main part
+                        <Link to='/'>Dashboard</Link><br />
+                        <Link to='/report'>Report</Link><br />
+                        <Link to='/management'>management</Link>
+                       
+                    </div>) : (<div style={{ width: '100%', height: '100vh', backgroundColor: '#e9ecf5', marginRight: '0' }}>
+                        <Routes>
+                            <Route path="/" element={<Dashboard />} ></Route>
+                            <Route path="/report" element={<Report />} ></Route>
+                            <Route path="/management" element={<Managment />} ></Route>
+                        </Routes>
                     </div>)
                 }
-
-                {isNavMenuClicked ? (<div style={{ width: '80%', height: '100vh', backgroundColor: 'green', marginRight: '0' }}>
-                    Main part
+                {isNavMenuClicked ? (<div style={{ width: '80%', height: '100vh', backgroundColor: '#e9ecf5', marginRight: '0' }}>
+                    <Routes>
+                        <Route path="/" element={<Dashboard />} ></Route>
+                        <Route path="/report" element={<Report />} ></Route>
+                        <Route path="/management" element={<Managment />} ></Route>
+                    </Routes>
                 </div>): null
                 }
             </div>
 
+
+         
       </>
     );
 }
