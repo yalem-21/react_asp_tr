@@ -8,3 +8,8 @@
 .navMenu:hover {
     background-color: green;
 }
+.bodyLeftNav {
+    width: 25%; 
+    height: 100vh;
+    background-color: #55607d;
+}
