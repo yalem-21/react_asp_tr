@@ -1,46 +1,51 @@
 import Image from './assets/images.jpg'
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import './Style/Ecx.css';
+import Icon from '@reacticons/bootstrap-icons';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
-function NavScrollExample() {
+function Ecx() { 
     return (
-        <Navbar expand="sm" style={{ backgroundColor:'#302f2b'} }>
+        <Navbar expand="sm" style={{ backgroundColor: '#302f2b', margin: '0', padding: '0' } }>
             <Container fluid>
-                <Navbar.Brand href="#" style={{ color: 'white', fontWeight: 'bold' }}> <img src={Image} width='30px' height='30px' />
+                <Navbar.Brand expand="lg" href="#" style={{
+                    color: 'white', fontWeight: 'bold',
+                    backgroundColor: 'blue', margin: '-20px',
+                    alignItems:'center',
+                    width: "25%",
+                    paddingLeft:'10px'
+                }}> <img className="rounded" src={Image} width='30px' height='20px' />
                     <span style={{ marginLeft: '7px' }}>ECX</span>
                 </Navbar.Brand>
                 <Navbar.Toggle style={{ color: 'white', borderColor: 'white', backgroundColor:'white' }} aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
-                        className="me-auto my-2 my-lg-0"
+                        className="me-auto my-3 my-lg-0"
                         style={{
                             maxHeight: '200px',
-                            color:'white'
+                            color: 'white',
+                            paddingLeft:'10px'
                         }}
                         /*navbarScroll*/
                     >
-                        <Nav.Link style={{ color: 'white', fontWeight: 'bold' }} href="#action1">Home</Nav.Link>
-                        <Nav.Link style={{ color: 'white', fontWeight: 'bold' }} href="#action2">Link</Nav.Link>
-                        <NavDropdown title="Link" id="navbarScrollingDropdown">
-                            <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action4">
-                                Another action
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action5">
-                                Something else here
-                            </NavDropdown.Item>
-                        </NavDropdown>
+                        <Button className="navMenu" style={{ color: 'white', fontWeight: 'bold', paddingBottom: '10px', backgroundColor: '#302f2b', border: 'none' }} href="#action1"><Icon style={{ fontWeight: 'bold', fontSize: '20px' }} name="list" size={52} /></Button>
+                        <Nav.Link  style={{ color: 'white', fontWeight: 'bold', paddingTop:'10px' }} href="#action2">Ecx Budget expense system </Nav.Link>
                       
                     </Nav>
                     <Nav className="d-flex">
-                        <Nav.Link style={{ color: 'white', fontWeight: 'bold' }} href="#action1">Home</Nav.Link>
-                        <Nav.Link style={{ color: 'white', fontWeight: 'bold' }} href="#action2">Link</Nav.Link>
-                        <Button style={{ color: 'white', fontWeight: 'bold' }} variant="outline-success">Search</Button>
+                        <Button style={{ backgroundColor: '#302f2b', border: 'none' }}>
+                            <i style={{ color: 'white', fontSize: '30px' }} className="bi bi-person-fill">
+                            </i>
+                            admin
+                        </Button>
+
+                       
+                 
+
+
                     </Nav>
                 </Navbar.Collapse>
             </Container>
@@ -48,4 +53,4 @@ function NavScrollExample() {
     );
 }
 
-export default NavScrollExample; 
+export default Ecx; 
